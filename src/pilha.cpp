@@ -6,6 +6,7 @@ using namespace std;
 
 template class Stack<int>;
 
+//-----------------Implementing stack with array [BEGIN]-------------------
 template<typename Type>
 Type *stack;
 int top_;
@@ -73,3 +74,5 @@ bool Stack<Type>::isEmpty()
 {
     return (top_ < 0);
 }
+
+//-----------------Implementing stack with array [END]-------------------
