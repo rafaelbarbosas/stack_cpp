@@ -3,7 +3,8 @@
 using namespace std;
 
 int main(){
-    class Stack s;
+    
+    class Stack<int> s;
     s.push(10);
     s.push(20);
     s.push(30);

@@ -4,16 +4,27 @@
 
 using namespace std;
 
-int *stack;
+template class Stack<int>;
+
+template<typename Type>
+Type *stack;
 int top_;
 
-Stack::Stack()
+template<typename Type>
+Stack<Type>::Stack()
 {
-    stack = new int(MAX);
+    stack<Type> = new Type[MAX];
     top_ = -1;
 }
 
-void Stack::push(int x)
+template<typename Type>
+Stack<Type>::~Stack()
+{
+    delete[] stack<Type>;
+}
+
+template<typename Type>
+void Stack<Type>::push(Type x)
 {
     if (top_ >= (MAX - 1))
     {
@@ -21,12 +32,13 @@ void Stack::push(int x)
     }
     else
     {
-        stack[++top_] = x;
+        stack<Type>[++top_] = x;
         cout << x << " pushed into stack\n";
     }
 }
 
-int Stack::pop()
+template<typename Type>
+Type Stack<Type>::pop()
 {
     if (top_ < 0)
     {
@@ -35,11 +47,13 @@ int Stack::pop()
     }
     else
     {
-        int x = stack[top_--];
+        int x = stack<Type>[top_--];
         return x;
     }
 }
-int Stack::top()
+
+template<typename Type>
+Type Stack<Type>::top()
 {
     if (top_ < 0)
     {
@@ -48,12 +62,14 @@ int Stack::top()
     }
     else
     {
-        int x = stack[top_];
+        int x = stack<Type>[top_];
         return x;
     }
 }
 
-bool Stack::isEmpty()
+
+template<typename Type>
+bool Stack<Type>::isEmpty()
 {
     return (top_ < 0);
 }

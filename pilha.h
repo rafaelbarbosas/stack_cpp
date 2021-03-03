@@ -3,15 +3,17 @@
 
 #include <iostream>
 
+template<typename Type>
 class Stack
 {
 
 public:
     Stack(); //constructor
+    ~Stack(); //destructor
  
-    void push(int);
-    int pop();
-    int top();
+    void push(Type);
+    Type pop();
+    Type top();
  
     int size();
     bool isEmpty();
