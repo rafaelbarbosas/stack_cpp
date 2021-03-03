@@ -1,16 +1,14 @@
 #ifndef PILHA_H_
 #define PILHA_H_
 
-#include <assert.h>
 #include <iostream>
 
 #define MAX 1000 //max size for stack
 
 class Stack
 {
-    int *stack;
+    int stack[MAX];
     int top_;
-    int capacity = MAX;
  
 public:
     Stack(); //constructor
