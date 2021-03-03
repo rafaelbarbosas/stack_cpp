@@ -3,13 +3,9 @@
 
 #include <iostream>
 
-#define MAX 1000 //max size for stack
-
 class Stack
 {
-    int stack[MAX];
-    int top_;
- 
+
 public:
     Stack(); //constructor
  

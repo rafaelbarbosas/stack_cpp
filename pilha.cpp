@@ -1,9 +1,15 @@
 #include "pilha.h"
 
+#define MAX 1000 //max size for stack
+
 using namespace std;
+
+int *stack;
+int top_;
 
 Stack::Stack()
 {
+    stack = new int(MAX);
     top_ = -1;
 }
 
