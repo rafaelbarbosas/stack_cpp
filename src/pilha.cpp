@@ -1,15 +1,18 @@
 #include "pilha.h"
 
-#define MAX 1000 //max size for stack
+//define o tamanho maximo da pilha
+#define MAX 1000
 
 using namespace std;
 
+//define os tipos aceitos na pilha
 template class Stack<int>;
 
-//-----------------Implementing stack with array [BEGIN]-------------------
+//-----------------Pilha com array [INICIO]-------------------
+
 template<typename Type>
-Type *stack;
-int topPosition;
+Type *stack; //array para a pilha
+int topPosition; //armazena a posição do topo
 
 template<typename Type>
 Stack<Type>::Stack()
@@ -34,7 +37,7 @@ void Stack<Type>::push(Type x)
     else
     {
         stack<Type>[++topPosition] = x;
-        cout << x << " pushed into stack\n";
+        cout << x << " empurado na pilha\n";
     }
 }
 
@@ -48,7 +51,7 @@ Type Stack<Type>::pop()
     }
     else
     {
-        int x = stack<Type>[topPosition--];
+        Type x = stack<Type>[topPosition--];
         return x;
     }
 }
@@ -58,7 +61,7 @@ Type Stack<Type>::top()
 {
     if (topPosition < 0)
     {
-        cout << "Stack is Empty";
+        cout << "A pilha esta vazia";
         return 0;
     }
     else
@@ -75,4 +78,4 @@ bool Stack<Type>::isEmpty()
     return (topPosition < 0);
 }
 
-//-----------------Implementing stack with array [END]-------------------
+//-----------------Pilha com array [FIM]-------------------
