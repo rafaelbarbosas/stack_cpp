@@ -9,13 +9,13 @@ template class Stack<int>;
 //-----------------Implementing stack with array [BEGIN]-------------------
 template<typename Type>
 Type *stack;
-int top_;
+int topPosition;
 
 template<typename Type>
 Stack<Type>::Stack()
 {
     stack<Type> = new Type[MAX];
-    top_ = -1;
+    topPosition = -1;
 }
 
 template<typename Type>
@@ -27,13 +27,13 @@ Stack<Type>::~Stack()
 template<typename Type>
 void Stack<Type>::push(Type x)
 {
-    if (top_ >= (MAX - 1))
+    if (topPosition >= (MAX - 1))
     {
         cout << "Stack Overflow";
     }
     else
     {
-        stack<Type>[++top_] = x;
+        stack<Type>[++topPosition] = x;
         cout << x << " pushed into stack\n";
     }
 }
@@ -41,14 +41,14 @@ void Stack<Type>::push(Type x)
 template<typename Type>
 Type Stack<Type>::pop()
 {
-    if (top_ < 0)
+    if (topPosition < 0)
     {
         cout << "Stack Underflow";
         return 0;
     }
     else
     {
-        int x = stack<Type>[top_--];
+        int x = stack<Type>[topPosition--];
         return x;
     }
 }
@@ -56,14 +56,14 @@ Type Stack<Type>::pop()
 template<typename Type>
 Type Stack<Type>::top()
 {
-    if (top_ < 0)
+    if (topPosition < 0)
     {
         cout << "Stack is Empty";
         return 0;
     }
     else
     {
-        int x = stack<Type>[top_];
+        int x = stack<Type>[topPosition];
         return x;
     }
 }
@@ -72,7 +72,7 @@ Type Stack<Type>::top()
 template<typename Type>
 bool Stack<Type>::isEmpty()
 {
-    return (top_ < 0);
+    return (topPosition < 0);
 }
 
 //-----------------Implementing stack with array [END]-------------------
