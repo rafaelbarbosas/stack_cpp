@@ -26,6 +26,7 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(OBJ): $(ODIR)/%.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
+	cppcheck --enable=warning ../
 
 pilha: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
