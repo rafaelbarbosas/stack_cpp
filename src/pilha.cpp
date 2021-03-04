@@ -79,3 +79,72 @@ bool Stack<Type>::isEmpty()
 }
 
 //-----------------Pilha com array [FIM]-------------------
+
+//-----------------Pilha com lista linkada [INICIO]--------
+// template<typename Type>
+// class StackNode {
+//     public:
+//         Type data;
+//         StackNode* next;
+// };
+ 
+// template<typename Type>
+// StackNode<Type>* newNode(Type data)
+// {
+//     StackNode<Type>* stackNode = new StackNode();
+//     stackNode->data = data;
+//     stackNode->next = NULL;
+//     return stackNode;
+// }
+
+// template<typename Type>
+// StackNode<Type>* topNode;
+
+// template<typename Type>
+// Stack<Type>::Stack()
+// {
+// }
+
+// template<typename Type>
+// int isEmpty()
+// {
+//     return !topNode;
+// }
+
+// template<typename Type>
+// void push(StackNode<Type>** root, Type data)
+// {
+//     StackNode<Type>* stackNode = newNode(data);
+//     stackNode->next = *root;
+//     *root = stackNode;
+//     cout << data << " pushed to stack\n";
+// }
+
+// template<typename Type>
+// int pop(StackNode<Type>** root)
+// {
+//     if (isEmpty(*root))
+//         return INT_MIN;
+//     StackNode<Type>* temp = *root;
+//     *root = (*root)->next;
+//     int popped = temp->data;
+//     free(temp);
+ 
+//     return popped;
+// }
+
+// template<typename Type>
+// int top(StackNode<Type>* root)
+// {
+//     if (isEmpty(root))
+//         return INT_MIN;
+//     return root->data;
+// }
+
+// template<typename Type>
+// Stack<Type>::~Stack()
+// {
+//     delete[] stack<Type>;
+// }
+
+//-----------------Pilha com lista linkada [FIM]--------
