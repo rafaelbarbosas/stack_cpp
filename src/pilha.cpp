@@ -10,157 +10,157 @@ template class Stack<int>;
 
 //-----------------Pilha com array [INICIO]-------------------
 
-// template<typename Type>
-// Type *stack; //array para a pilha
-// int topPosition; //armazena a posição do topo
-
-// template<typename Type>
-// Stack<Type>::Stack()
-// {
-//     stack<Type> = new Type[MAX];
-//     topPosition = -1;
-// }
-
-// template<typename Type>
-// Stack<Type>::~Stack()
-// {
-//     delete[] stack<Type>;
-// }
-
-// template<typename Type>
-// void Stack<Type>::push(Type x)
-// {
-//     if (topPosition >= (MAX - 1))
-//     {
-//         cout << "Stack Overflow";
-//     }
-//     else
-//     {
-//         stack<Type>[++topPosition] = x;
-//     }
-// }
-
-// template<typename Type>
-// Type Stack<Type>::pop()
-// {
-//     if (topPosition < 0)
-//     {
-//         cout << "Stack Underflow";
-//         return NULL;
-//     }
-//     else
-//     {
-//         Type x = stack<Type>[topPosition--];
-//         return x;
-//     }
-// }
-
-// template<typename Type>
-// Type Stack<Type>::top()
-// {
-//     if (topPosition < 0)
-//     {
-//         cout << "A pilha esta vazia";
-//         return NULL;
-//     }
-//     else
-//     {
-//         int x = stack<Type>[topPosition];
-//         return x;
-//     }
-// }
-
-
-// template<typename Type>
-// bool Stack<Type>::isEmpty()
-// {
-//     return (topPosition < 0);
-// }
-
-// template<typename Type>
-// bool Stack<Type>::isNtEmpty()
-// {
-//     return (topPosition >= 0);
-// }
-
-//-----------------Pilha com array [FIM]-------------------
-
-//-----------------Pilha com lista linkada [INICIO]--------
-
 template<typename Type>
-class StackNode {
-    public:
-        Type data;
-        StackNode* next;
-};
- 
-template<typename Type>
-StackNode<Type>* newNode(Type data)
-{
-    StackNode<Type>* stackNode = new StackNode<Type>();
-    stackNode->data = data;
-    stackNode->next = NULL;
-    return stackNode;
-}
-
-template<typename Type>
-StackNode<Type>* topNode;
+Type *stack; //array para a pilha
+int topPosition; //armazena a posição do topo
 
 template<typename Type>
 Stack<Type>::Stack()
 {
-}
-
-template<typename Type>
-bool Stack<Type>::isEmpty()
-{
-    return !topNode<Type>;
-}
-
-template<typename Type>
-bool Stack<Type>::isNotEmpty()
-{
-    return topNode<Type>;
-}
-
-template<typename Type>
-void Stack<Type>::push( Type data )
-{
-    StackNode<Type>* stackNode = newNode(data);
-    stackNode->next = topNode<Type>;
-    topNode<Type> = stackNode;
-}
-
-template<typename Type>
-Type Stack<Type>::pop()
-{
-    if (Stack<Type>::isEmpty()){
-        return NULL;
-    }
-
-    StackNode<Type>* aux = topNode<Type>;
-    topNode<Type> = topNode<Type>->next;
-
-    Type popped = aux->data;
-    free(aux);
- 
-    return popped;
-}
-
-template<typename Type>
-Type Stack<Type>::top()
-{
-    if (Stack<Type>::isEmpty())
-        return NULL;
-    return topNode<Type>->data;
+    stack<Type> = new Type[MAX];
+    topPosition = -1;
 }
 
 template<typename Type>
 Stack<Type>::~Stack()
 {
-    while(Stack<Type>::isNotEmpty()){
-        pop();
+    delete[] stack<Type>;
+}
+
+template<typename Type>
+void Stack<Type>::push(Type x)
+{
+    if (topPosition >= (MAX - 1))
+    {
+        cout << "Stack Overflow";
+    }
+    else
+    {
+        stack<Type>[++topPosition] = x;
     }
 }
+
+template<typename Type>
+Type Stack<Type>::pop()
+{
+    if (topPosition < 0)
+    {
+        cout << "Stack Underflow";
+        return NULL;
+    }
+    else
+    {
+        Type x = stack<Type>[topPosition--];
+        return x;
+    }
+}
+
+template<typename Type>
+Type Stack<Type>::top()
+{
+    if (topPosition < 0)
+    {
+        cout << "A pilha esta vazia";
+        return NULL;
+    }
+    else
+    {
+        int x = stack<Type>[topPosition];
+        return x;
+    }
+}
+
+
+template<typename Type>
+bool Stack<Type>::isEmpty()
+{
+    return (topPosition < 0);
+}
+
+template<typename Type>
+bool Stack<Type>::isNotEmpty()
+{
+    return (topPosition >= 0);
+}
+
+//-----------------Pilha com array [FIM]-------------------
+
+//-----------------Pilha com lista linkada [INICIO]--------
+
+// template<typename Type>
+// class StackNode {
+//     public:
+//         Type data;
+//         StackNode* next;
+// };
+ 
+// template<typename Type>
+// StackNode<Type>* newNode(Type data)
+// {
+//     StackNode<Type>* stackNode = new StackNode<Type>();
+//     stackNode->data = data;
+//     stackNode->next = NULL;
+//     return stackNode;
+// }
+
+// template<typename Type>
+// StackNode<Type>* topNode;
+
+// template<typename Type>
+// Stack<Type>::Stack()
+// {
+// }
+
+// template<typename Type>
+// bool Stack<Type>::isEmpty()
+// {
+//     return !topNode<Type>;
+// }
+
+// template<typename Type>
+// bool Stack<Type>::isNotEmpty()
+// {
+//     return topNode<Type>;
+// }
+
+// template<typename Type>
+// void Stack<Type>::push( Type data )
+// {
+//     StackNode<Type>* stackNode = newNode(data);
+//     stackNode->next = topNode<Type>;
+//     topNode<Type> = stackNode;
+// }
+
+// template<typename Type>
+// Type Stack<Type>::pop()
+// {
+//     if (Stack<Type>::isEmpty()){
+//         return NULL;
+//     }
+
+//     StackNode<Type>* aux = topNode<Type>;
+//     topNode<Type> = topNode<Type>->next;
+
+//     Type popped = aux->data;
+//     free(aux);
+ 
+//     return popped;
+// }
+
+// template<typename Type>
+// Type Stack<Type>::top()
+// {
+//     if (Stack<Type>::isEmpty())
+//         return NULL;
+//     return topNode<Type>->data;
+// }
+
+// template<typename Type>
+// Stack<Type>::~Stack()
+// {
+//     while(Stack<Type>::isNotEmpty()){
+//         pop();
+//     }
+// }
 
 //-----------------Pilha com lista linkada [FIM]--------
