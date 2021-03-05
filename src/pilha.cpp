@@ -11,7 +11,7 @@ template class Stack<int>;
 //define o tipo da pilha
 #define ARRAY 0
 #define LISTA_LINKADA 1
-#define TIPO_PILHA ARRAY
+#define TIPO_PILHA LISTA_LINKADA
 
 #if TIPO_PILHA == ARRAY
 
@@ -123,10 +123,8 @@ void Stack<Type>::push(Type data)
 template <typename Type>
 Type Stack<Type>::pop()
 {
-    if (Stack<Type>::isEmpty())
-    {
-        return NULL;
-    }
+    //Stack underflow
+    assert(Stack<Type>::isEmpty());
 
     StackNode<Type> *aux = topNode<Type>;
     topNode<Type> = topNode<Type>->next;
@@ -140,8 +138,9 @@ Type Stack<Type>::pop()
 template <typename Type>
 Type Stack<Type>::top()
 {
-    if (Stack<Type>::isEmpty())
-        return NULL;
+    //Pilha vazia
+    assert(Stack<Type>::isEmpty());
+    
     return topNode<Type>->data;
 }
 
