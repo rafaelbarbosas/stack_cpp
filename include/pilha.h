@@ -12,8 +12,7 @@ class Stack{
         void push(Type);
         Type pop();
         Type top();
-    
-        int size();
+        
         bool isEmpty();
 };
 
