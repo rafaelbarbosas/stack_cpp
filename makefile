@@ -8,12 +8,13 @@
 # pilha: testa_pilha.o pilha.o 
 # 	$(CC) -o pilha testa_pilha.o pilha.o
 
-IDIR =../include
+IDIR =include
 CC=g++
 CFLAGS=-I$(IDIR)
 
-ODIR=obj
-LDIR =../lib
+ODIR=src/obj
+LDIR=lib
+SRCDIR=src
 
 LIBS=-lm
 
@@ -24,7 +25,7 @@ _OBJ = testa_pilha.o pilha.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
-$(OBJ): $(ODIR)/%.o: %.cpp $(DEPS)
+$(OBJ): $(ODIR)/%.o: $(SRCDIR)/%.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 	cppcheck --enable=warning ../
 
