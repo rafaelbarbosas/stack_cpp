@@ -2,6 +2,7 @@
 #define PILHA_H_
 
 #include <iostream>
+#include <assert.h>
 
 template<typename Type>
 class Stack{
