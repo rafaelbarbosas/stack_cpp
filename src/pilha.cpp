@@ -11,7 +11,7 @@ template class Stack<int>;
 //define o tipo da pilha
 #define ARRAY 0
 #define LISTA_LINKADA 1
-#define TIPO_PILHA LISTA_LINKADA
+#define TIPO_PILHA ARRAY
 
 #if TIPO_PILHA == ARRAY
 
@@ -35,16 +35,16 @@ Stack<Type>::~Stack()
 template <typename Type>
 void Stack<Type>::push(Type x)
 {
-    //Stack Overflow
-    assert(topPosition >= (MAX - 1));
+    //Verifica se nao eh um stack Overflow
+    assert(topPosition < (MAX - 1));
     stack<Type>[++topPosition] = x;
 }
 
 template <typename Type>
 Type Stack<Type>::pop()
 {
-    //Stack Underflow
-    assert(topPosition < 0);
+    //Verifica se nao eh um stack Underflow
+    assert(topPosition >= 0);
 
     Type x = stack<Type>[topPosition--];
     return x;
@@ -53,8 +53,8 @@ Type Stack<Type>::pop()
 template <typename Type>
 Type Stack<Type>::top()
 {
-    //A pilha esta vazia
-    assert(topPosition < 0);
+    //Verifica se pilha nao esta vazia
+    assert(topPosition >= 0);
 
     int x = stack<Type>[topPosition];
     return x;
