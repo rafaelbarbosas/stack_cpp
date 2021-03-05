@@ -95,6 +95,7 @@ StackNode<Type> *newNode(Type data)
     return stackNode;
 }
 
+//Variavel para o no no topo da pilha
 template <typename Type>
 StackNode<Type> *topNode;
 
