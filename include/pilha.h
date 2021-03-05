@@ -12,8 +12,9 @@ class Stack{
         void push(Type);
         Type pop();
         Type top();
-        
+
         bool isEmpty();
+        bool isNotEmpty();
 };
 
 #endif  // PILHA_H_
