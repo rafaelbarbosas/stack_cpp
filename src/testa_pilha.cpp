@@ -4,11 +4,19 @@ using namespace std;
 
 int main(){
     
-    class Stack<int> s;
-    s.push(10);
-    s.push(20);
-    s.push(30);
-    cout << s.pop() << " Popped from stack\n";
+    class Stack<int> stack;
+    stack.push(10);
+    cout << stack.top() << " Topo da pilha\n";
+
+    stack.push(20);
+    cout << stack.top() << " Topo da pilha\n";
+
+    stack.push(30);
+    cout << stack.top() << " Topo da pilha\n";
+
+    cout << stack.pop() << " Retirado do pilha\n";
  
+    cout << stack.top() << " Topo da pilha\n";
+
     return 0;
 }

@@ -37,7 +37,6 @@ void Stack<Type>::push(Type x)
     else
     {
         stack<Type>[++topPosition] = x;
-        cout << x << " empurado na pilha\n";
     }
 }
 
