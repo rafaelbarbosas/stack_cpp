@@ -27,10 +27,11 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(OBJ): $(ODIR)/%.o: $(SRCDIR)/%.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
-	cppcheck --enable=warning ../
 
 pilha: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+	cppcheck --enable=warning ../
+	cpplint src/pilha.cpp src/testa_pilha.cpp include/pilha.h
 
 .PHONY: clean
 

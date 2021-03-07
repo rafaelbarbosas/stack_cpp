@@ -1,21 +1,23 @@
-#ifndef PILHA_H_
-#define PILHA_H_
+// Copyright 2021 Rafael Barbosa de Sousa -170043827
+
+#ifndef INCLUDE_PILHA_H_
+#define INCLUDE_PILHA_H_
 
 #include <iostream>
-#include <assert.h>
+#include <cassert>
 
 template<typename Type>
 class Stack{
-    public:
-        Stack(); //constructor
-        ~Stack(); //destructor
-    
-        void push(Type);
-        Type pop();
-        Type top();
+ public:
+    Stack();  // constructor
+    ~Stack();  // destructor
 
-        bool isEmpty();
-        bool isNotEmpty();
+    void push(Type);
+    Type pop();
+    Type top();
+
+    bool isEmpty();
+    bool isNotEmpty();
 };
 
-#endif  // PILHA_H_
+#endif  // INCLUDE_PILHA_H_

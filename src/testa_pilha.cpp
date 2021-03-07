@@ -1,9 +1,10 @@
-#include "pilha.h"
+// Copyright 2021 Rafael Barbosa de Sousa -170043827
 
-using namespace std;
+#include "../include/pilha.h"
 
-int main(){
-    
+using std::cout;
+
+int main() {
     class Stack<int> stack;
     stack.push(10);
     cout << stack.top() << " Topo da pilha\n";
@@ -15,7 +16,7 @@ int main(){
     cout << stack.top() << " Topo da pilha\n";
 
     cout << stack.pop() << " Retirado do pilha\n";
- 
+
     cout << stack.top() << " Topo da pilha\n";
 
     return 0;
