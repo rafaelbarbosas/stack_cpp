@@ -12,7 +12,7 @@ template class Stack<int>;
 #define ARRAY 0
 #define LISTA_LINKADA 1
 
-#define TIPO_PILHA ARRAY
+#define TIPO_PILHA LISTA_LINKADA
 
 //Implemetacao em ARRAY
 #if TIPO_PILHA == ARRAY
@@ -134,7 +134,7 @@ Type Stack<Type>::pop()
     topNode<Type> = topNode<Type>->next;
 
     Type popped = aux->data;
-    free(aux);
+    delete aux;
 
     return popped;
 }
