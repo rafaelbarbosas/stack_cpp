@@ -5,6 +5,9 @@
          --log-file=valgrind-out.txt \
          ./pilha
 
+#gdb ./pilha
+#run ./pilha
+
 IDIR =include
 CC=g++
 CFLAGS=-I$(IDIR)
