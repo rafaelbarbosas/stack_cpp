@@ -12,7 +12,7 @@ template class Stack<int>;
 #define ARRAY 0
 #define LISTA_LINKADA 1
 
-#define TIPO_PILHA LISTA_LINKADA
+#define TIPO_PILHA ARRAY
 
 //Implemetacao em ARRAY
 #if TIPO_PILHA == ARRAY

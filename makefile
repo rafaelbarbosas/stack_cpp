@@ -1,12 +1,9 @@
-# CC=g++
-# CFLAGS=-I.
-# DEPS = pilha.h
-
-# %.o: %.c $(DEPS)
-# 	$(CC) -c -o $@ $< $(CFLAGS)
-
-# pilha: testa_pilha.o pilha.o 
-# 	$(CC) -o pilha testa_pilha.o pilha.o
+#valgrind --leak-check=full \
+         --show-leak-kinds=all \
+         --track-origins=yes \
+         --verbose \
+         --log-file=valgrind-out.txt \
+         ./pilha
 
 IDIR =include
 CC=g++
