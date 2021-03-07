@@ -1,10 +1,3 @@
-#valgrind --leak-check=full \
-         --show-leak-kinds=all \
-         --track-origins=yes \
-         --verbose \
-         --log-file=valgrind-out.txt \
-         ./pilha
-
 #gdb ./pilha
 #run ./pilha
 
@@ -32,6 +25,12 @@ pilha: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 	cppcheck --enable=warning ../
 	cpplint src/pilha.cpp src/testa_pilha.cpp include/pilha.h
+	valgrind --leak-check=full \
+         --show-leak-kinds=all \
+         --track-origins=yes \
+         --verbose \
+         --log-file=valgrind-out.txt \
+         ./pilha
 
 .PHONY: clean
 
